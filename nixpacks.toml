@@ -1,2 +1,14 @@
+# File: nixpacks.toml
 [phases.setup]
-nixPkgs = ["php82", "php82Packages.pdo_mysql"]
+nixPkgs = ["php82", "php82Packages.pdo_mysql", "composer"]
+
+[phases.install]
+commands = [
+  "composer install --optimize-autoloader --no-scripts --no-interaction"
+]
+
+[phases.build]
+commands = [
+  "php artisan migrate --force",
+  "php artisan db:seed --force"
+]
