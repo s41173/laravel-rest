@@ -28,14 +28,8 @@ RUN composer install --optimize-autoloader --no-interaction --no-scripts
 # Copy environment file
 COPY .env.example .env
 
-# Generate app key
-RUN php artisan key:generate
-
 # Expose port
 EXPOSE 9000
 
-# Run migrations automatically (optional)
-# RUN php artisan migrate --force
-
-# Start PHP-FPM
-CMD ["php-fpm"]
+# Runtime commands (do NOT run artisan migrate or key:generate at build time)
+CMD php artisan key:generate && php-fpm
