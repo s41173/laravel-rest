@@ -29,7 +29,7 @@ return [
     */
 
     'bcrypt' => [
-        'rounds' => env('BCRYPT_ROUNDS', 8),
+        'rounds' => env('BCRYPT_ROUNDS', 7),
         'verify' => false, // jika password CI
         // 'verify' => true,
     ],
