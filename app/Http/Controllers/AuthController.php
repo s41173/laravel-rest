@@ -34,7 +34,7 @@ class AuthController extends Controller
         }
 
         // Redis::rpush('my_queue', 'Pesan dari Laravel');
-        Redis::rpush('my_queue', 'halo dari laravel - '.date("H:i:s"));
+        Redis::rpush('my_queue', 'halo dari laravel saya nih - '.date("H:i:s"));
     }
 
     function xtesting(){
