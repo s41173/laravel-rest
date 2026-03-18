@@ -28,7 +28,7 @@ class AuthController extends Controller
         $redis = Redis::connection();
     
         try {
-            echo "Redis PING PING: ".$redis->ping().PHP_EOL; // biasanya PONG
+            echo "Redis PING PING AGAIN: ".$redis->ping().PHP_EOL; // biasanya PONG
         } catch (\Exception $e) {
             echo "Cannot connect to Redis: ".$e->getMessage().PHP_EOL;
         }
